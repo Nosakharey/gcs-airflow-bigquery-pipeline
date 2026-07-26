@@ -1,4 +1,4 @@
-# # Problem Statement
+## Problem Statement
 Building a data pipeline without automated tools like Airflow, and without modern data storage systems like GCP, has become a significant challenge. In recent years, tools like Airflow have made building data engineering pipelines more efficient, faster, and more automated. This has brought a fantastic development not only to the data engineering world, but to data analysis and data science as well.
 
 My project builds an automated data pipeline that moves B2B marketplace data from a local machine into BigQuery, using Google Cloud Storage as a landing zone, provisioned with Terraform and orchestrated by Apache Airflow (via Astronomer)
@@ -15,39 +15,43 @@ Terraform provisions the cloud infastructure. Airflow automates the data through
 
 | Tool | Role |
 |---|---|
-| **Terraform** | Infrastructure as Code — provisions the GCS bucket, BigQuery dataset, and BigQuery table |
-| **Apache Airflow** (via Astronomer) | Orchestration — automates the data transfer from local → GCS → BigQuery |
+| **Terraform** | Infrastructure as Code,provisions the GCS bucket, BigQuery dataset, and BigQuery table |
+| **Apache Airflow** (via Astronomer) | Orchestration,automates the data transfer from local → GCS → BigQuery |
 | **Google Cloud Storage (GCS)** | Landing zone for the raw file before it reaches BigQuery |
-| **Google BigQuery** | Cloud data warehouse — final destination for analytics-ready data |
+| **Google BigQuery** | Cloud data warehouse, final destination for analytics-ready data |
 | **Docker** | Runs the Airflow environment via Astronomer's Astro CLI |
 | **Linux / Bash** | Used throughout for navigating the Airflow container and managing files |
 
 ## Project Structure
 
+## Project Structure
+
+\`\`\`
 gcs-airflow-bigquery-pipeline/
-├── .astro/ # Astronomer project config
+├── .astro/                  # Astronomer project config
 ├── assets/
-│ └── architecture-diagram.svg
+│   └── architecture-diagram.svg
 ├── dags/
-│ ├── gcs_bq.py # The DAG — task definitions and dependencies
-│ ├── config.py # Reusable config values (paths, bucket name, project ID, schema)
-│ ├── .airflowignore
-│ └── data/
-│ └── users_clean.csv # Source dataset
+│   ├── gcs_bq.py             # The DAG — task definitions and dependencies
+│   ├── config.py             # Reusable config values (paths, bucket name, project ID, schema)
+│   ├── .airflowignore
+│   └── data/
+│       └── users_clean.csv   # Source dataset
 ├── terraform/
-│ ├── main.tf # Provider block + GCS bucket, BigQuery dataset & table resources
-│ ├── variable.tf # Reusable variables referenced in main.tf
-│ ├── local.tf # BigQuery table schema, kept separate for readability
-│ └── .terraform.lock.hcl
+│   ├── main.tf                # Provider block + GCS bucket, BigQuery dataset & table resources
+│   ├── variable.tf            # Reusable variables referenced in main.tf
+│   ├── local.tf                # BigQuery table schema, kept separate for readability
+│   └── .terraform.lock.hcl
 ├── tests/
-│ └── dags/
-│ └── test_dag_example.py
+│   └── dags/
+│       └── test_dag_example.py
 ├── Dockerfile
 ├── .dockerignore
 ├── .gitignore
 ├── packages.txt
 ├── requirements.txt
 └── README.md
+\`\`\`
 
 > `.env` and `dags/data/application_default_credentials.json` are intentionally excluded from this repo via `.gitignore`,they contain live GCP credentials and should never be committed. See [Authentication](#authenticating-airflow-with-gcp) below for how to set these up yourself.
 
@@ -204,7 +208,7 @@ GOOGLE_APPLICATION_CREDENTIALS=/usr/local/airflow/dags/data/application_default_
 - How Airflow's Docker-based execution model changes file path handling, and how to resolve container paths using `astro dev bash`
 - The practical difference between authentication (who you are) and authorization (what you're allowed to do) in GCP IAM
 - Implementing service account impersonation as a more secure alternative to raw service account keys
-- Debugging real IAM permission errors by directly inspecting a project's IAM policy from the command line
+
 
 ## Author
 
