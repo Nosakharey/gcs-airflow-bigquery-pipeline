@@ -1,0 +1,113 @@
+<svg viewBox="0 0 1100 620" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2563EB"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1100" height="620" fill="#F8FAFC"/>
+
+  <!-- Outer container: Airflow -->
+  <rect x="40" y="40" width="1020" height="540" rx="24" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="2.5" filter="url(#softShadow)"/>
+
+  <!-- Airflow label group -->
+  <g transform="translate(70, 60)">
+    <!-- simple pinwheel mark -->
+    <g transform="translate(18,18)">
+      <path d="M0,0 C10,-14 24,-14 22,-2 C10,0 4,6 0,0 Z" fill="#2563EB"/>
+      <path d="M0,0 C-14,10 -14,24 -2,22 C0,10 6,4 0,0 Z" fill="#3B82F6"/>
+      <path d="M0,0 C14,10 14,24 2,22 C0,10 -6,4 0,0 Z" fill="#60A5FA"/>
+      <path d="M0,0 C10,14 -4,24 -10,14 C0,10 4,4 0,0 Z" fill="#93C5FD"/>
+      <circle cx="0" cy="0" r="4" fill="#1E3A8A"/>
+    </g>
+    <text x="46" y="12" font-size="13" fill="#64748B" letter-spacing="1">APACHE</text>
+    <text x="46" y="32" font-size="24" font-weight="600" fill="#1E3A8A">Airflow</text>
+  </g>
+  <text x="70" y="128" font-size="13" fill="#64748B">Orchestration layer — automates and schedules the full data flow</text>
+
+  <!-- Terraform container -->
+  <rect x="430" y="150" width="590" height="380" rx="20" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2" stroke-dasharray="0"/>
+
+  <!-- Terraform label -->
+  <g transform="translate(455, 170)">
+    <g transform="translate(6,4)">
+      <polygon points="9,0 18,5 18,15 9,20 0,15 0,5" fill="#1D4ED8"/>
+      <polygon points="9,0 18,5 9,10 0,5" fill="#3B82F6"/>
+    </g>
+    <text x="34" y="16" font-size="19" font-weight="600" fill="#1E3A8A">Terraform</text>
+  </g>
+  <text x="455" y="205" font-size="12.5" fill="#475569">Provisions and manages all GCP infrastructure (IaC)</text>
+
+  <!-- GCP inner group container -->
+  <rect x="460" y="225" width="530" height="270" rx="16" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.5"/>
+
+  <!-- Google Cloud IAM node -->
+  <g transform="translate(505, 250)">
+    <rect x="0" y="0" width="150" height="90" rx="14" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+    <circle cx="75" cy="34" r="18" fill="#2563EB"/>
+    <circle cx="75" cy="28" r="7" fill="#FFFFFF"/>
+    <path d="M62,44 a13,10 0 0 1 26,0 z" fill="#FFFFFF"/>
+    <text x="75" y="66" font-size="12.5" font-weight="600" fill="#1E3A8A" text-anchor="middle">Google Cloud</text>
+    <text x="75" y="80" font-size="12.5" font-weight="600" fill="#1E3A8A" text-anchor="middle">IAM</text>
+  </g>
+
+  <!-- Google Cloud (project) node -->
+  <g transform="translate(775, 250)">
+    <rect x="0" y="0" width="150" height="90" rx="14" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5"/>
+    <path d="M75,20 a16,16 0 1 0 0.1,0 z" fill="none"/>
+    <circle cx="75" cy="38" r="17" fill="#2563EB"/>
+    <path d="M60,38 a15,15 0 0 1 30,0" fill="none" stroke="#93C5FD" stroke-width="3"/>
+    <text x="75" y="66" font-size="12.5" font-weight="600" fill="#1E3A8A" text-anchor="middle">Google Cloud</text>
+    <text x="75" y="80" font-size="12.5" font-weight="600" fill="#1E3A8A" text-anchor="middle">Platform</text>
+  </g>
+
+  <!-- Cloud Storage node -->
+  <g transform="translate(505, 375)">
+    <rect x="0" y="0" width="150" height="100" rx="14" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="1.8"/>
+    <rect x="55" y="24" width="40" height="40" rx="8" fill="#1D4ED8"/>
+    <rect x="63" y="34" width="24" height="4" rx="2" fill="#FFFFFF"/>
+    <rect x="63" y="44" width="24" height="4" rx="2" fill="#FFFFFF"/>
+    <rect x="63" y="54" width="24" height="4" rx="2" fill="#FFFFFF"/>
+    <text x="75" y="80" font-size="12.5" font-weight="600" fill="#1E3A8A" text-anchor="middle">Cloud Storage</text>
+    <text x="75" y="93" font-size="11" fill="#3B82F6" text-anchor="middle">(landing zone)</text>
+  </g>
+
+  <!-- BigQuery node -->
+  <g transform="translate(775, 375)">
+    <rect x="0" y="0" width="150" height="100" rx="14" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="1.8"/>
+    <circle cx="75" cy="42" r="20" fill="none" stroke="#1D4ED8" stroke-width="5"/>
+    <line x1="89" y1="56" x2="100" y2="67" stroke="#1D4ED8" stroke-width="6" stroke-linecap="round"/>
+    <text x="75" y="80" font-size="12.5" font-weight="600" fill="#1E3A8A" text-anchor="middle">BigQuery</text>
+    <text x="75" y="93" font-size="11" fill="#3B82F6" text-anchor="middle">(data warehouse)</text>
+  </g>
+
+  <!-- Arrow: Cloud Storage -> BigQuery -->
+  <line x1="655" y1="425" x2="765" y2="425" stroke="#2563EB" stroke-width="2.5" stroke-dasharray="6,5" marker-end="url(#arrow)"/>
+  <text x="710" y="412" font-size="11.5" fill="#1D4ED8" text-anchor="middle" font-weight="600">GCSToBigQuery</text>
+  <text x="710" y="443" font-size="11" fill="#64748B" text-anchor="middle">Operator</text>
+
+  <!-- Local folder node (outside Terraform box, inside Airflow box) -->
+  <g transform="translate(90, 360)">
+    <filter id="folderShadow"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/></filter>
+    <path d="M0,20 L0,80 Q0,88 8,88 L142,88 Q150,88 150,80 L150,32 Q150,24 142,24 L70,24 L58,8 L8,8 Q0,8 0,20 Z"
+          fill="#FBBF24" stroke="#B45309" stroke-width="1.5" filter="url(#folderShadow)"/>
+    <text x="75" y="112" font-size="13" font-weight="600" fill="#1E3A8A" text-anchor="middle">Local Machine</text>
+    <text x="75" y="127" font-size="11" fill="#64748B" text-anchor="middle">(source CSV file)</text>
+  </g>
+
+  <!-- Arrow: Local folder -> Cloud Storage -->
+  <line x1="240" y1="400" x2="495" y2="410" stroke="#2563EB" stroke-width="2.5" stroke-dasharray="6,5" marker-end="url(#arrow)"/>
+  <text x="360" y="380" font-size="11.5" fill="#1D4ED8" text-anchor="middle" font-weight="600">LocalFilesystemToGCS</text>
+  <text x="360" y="396" font-size="11" fill="#64748B" text-anchor="middle">Operator</text>
+
+  <!-- Footer caption -->
+  <text x="70" y="560" font-size="12" fill="#94A3B8">
+    Airflow orchestrates the pipeline · Terraform provisions the GCP resources it runs on
+  </text>
+
+</svg>
