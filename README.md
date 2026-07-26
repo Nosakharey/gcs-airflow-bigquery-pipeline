@@ -22,11 +22,10 @@ Terraform provisions the cloud infastructure. Airflow automates the data through
 | **Docker** | Runs the Airflow environment via Astronomer's Astro CLI |
 | **Linux / Bash** | Used throughout for navigating the Airflow container and managing files |
 
-## Project Structure
 
 ## Project Structure
 
-\`\`\`
+```
 gcs-airflow-bigquery-pipeline/
 ├── .astro/                  # Astronomer project config
 ├── assets/
@@ -51,7 +50,7 @@ gcs-airflow-bigquery-pipeline/
 ├── packages.txt
 ├── requirements.txt
 └── README.md
-\`\`\`
+```
 
 > `.env` and `dags/data/application_default_credentials.json` are intentionally excluded from this repo via `.gitignore`,they contain live GCP credentials and should never be committed. See [Authentication](#authenticating-airflow-with-gcp) below for how to set these up yourself.
 
