@@ -1,6 +1,12 @@
+# GCS Airflow BigQuery Pipeline
+
+An automated data pipeline that moves B2B marketplace data from a local machine into Google BigQuery, using Google Cloud Storage as a landing zone — provisioned with Terraform and orchestrated end-to-end with Apache Airflow (via Astronomer).
+
 🔗 **Repo:** [github.com/Nosakharey/gcs-airflow-bigquery-pipeline](https://github.com/Nosakharey/gcs-airflow-bigquery-pipeline)
 
 🎥 **Demo video:** [![Project Demo](https://img.youtube.com/vi/dYXIAwTFNRk/0.jpg)](https://youtu.be/dYXIAwTFNRk)
+
+---
 
 ## Problem Statement
 Building a data pipeline without automated tools like Airflow, and without modern data storage systems like GCP, has become a significant challenge. In recent years, tools like Airflow have made building data engineering pipelines more efficient, faster, and more automated. This has brought a fantastic development not only to the data engineering world, but to data analysis and data science as well.
